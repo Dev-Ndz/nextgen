@@ -1,0 +1,40 @@
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+}
+
+/* First shape - circle */
+.bg-shape:after {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  bottom: -300px;
+  left: 50%;
+  z-index: -20;
+  transform: translateX(-50%);
+  background-color: blue;
+  background: radial-gradient(
+    circle at center,
+    transparent 0%,
+    transparent 15%,
+    rgb(255, 219, 255) 15%
+  );
+}
+
+/* Second shape - diamond */
+.bg-shape:before {
+  content: "";
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  background: rgba(0, 0, 255, 0.055); /* Semi-transparent to show blur effect */
+  transform: translateX(-50%) rotate(45deg); /* Rotate to make a diamond shape */
+  backdrop-filter: blur(50px); /* Apply blur effect to the background */
+  -webkit-backdrop-filter: blur(250px); /* For Safari support */
+  top: 50%; /* Adjust as needed */
+  left: 0;
+  z-index: -1;
+}

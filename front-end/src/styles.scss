@@ -1,0 +1,146 @@
+@import "primeng/resources/primeng.css";
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeicons/primeicons.css";
+
+body,
+p,
+h1,
+h2,
+h3 {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+label {
+  font-weight: 600;
+}
+p {
+  color: gray;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 1.33rem;
+  line-height: 2rem;
+}
+
+h3.bold {
+  font-weight: 800;
+}
+
+.white * {
+  color: white;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text-center {
+  text-align: center;
+}
+.right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.gap-05 {
+  gap: 0.5rem;
+}
+
+.mb-05 {
+  margin-bottom: 0.5rem;
+}
+.mb-1 {
+  margin-bottom: 1rem;
+}
+.mb-2 {
+  margin-bottom: 2rem;
+}
+.mb-3 {
+  margin-bottom: 3rem;
+}
+
+.pad-5 {
+  padding: 5rem;
+}
+
+.h100 {
+  height: 100dvh;
+}
+
+.w50 {
+  width: 50%;
+}
+
+.gradient-bg {
+  background-image: linear-gradient(
+    to right,
+    rgba(80, 63, 255, 1),
+    rgba(144, 31, 255, 1)
+  );
+}
+
+.message {
+  color: white;
+  padding: 25px;
+  border-radius: 8px;
+  text-align: center;
+}
+.error {
+  background-color: rgb(206, 93, 93);
+}
+.confirmation {
+  background-color: rgb(81, 175, 53);
+}
+
+// OVER RIDE PRIMENG ELEMENTS
+.custom-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+}
+
+.p-highlight button {
+  width: 16px;
+  background-color: white;
+}
+
+.custom-content-indicator {
+  padding: 0px;
+  justify-content: start;
+  margin-top: 10px;
+}

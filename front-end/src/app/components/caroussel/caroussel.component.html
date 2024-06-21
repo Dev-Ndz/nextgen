@@ -1,0 +1,17 @@
+<p-carousel
+  [value]="galleryItems"
+  [numVisible]="1"
+  [numScroll]="1"
+  [showNavigators]="false"
+  [autoplayInterval]="0"
+  [circular]="true"
+  indicatorsContentClass="custom-content-indicator"
+  indicatorStyleClass="custom-indicator"
+>
+  <ng-template pTemplate="item" let-item>
+    <div class="gallery-item">
+      <h1 class="mb-2">{{ item.title }}</h1>
+      <h3 class="mb-2">{{ item.text }}</h3>
+    </div>
+  </ng-template>
+</p-carousel>

@@ -1,0 +1,49 @@
+<div class="wrapper">
+  <div class="column gap-05">
+    <h2>Create a new account</h2>
+    <p-button
+      label="Sign In with Google"
+      icon="pi pi-google"
+      [outlined]="true"
+      severity="secondary"
+      class="p-fluid"
+    />
+    <p-divider align="center"><p>OR</p></p-divider>
+    <div *ngIf="errorMessage" class="message error">
+      {{ errorMessage }}
+    </div>
+    <div *ngIf="validationMessage" class="confirmation message">
+      {{ validationMessage }}
+    </div>
+    <form class="column gap-05">
+      <label for="email">Email</label>
+      <input
+        type="text"
+        pInputText
+        [(ngModel)]="email"
+        placeholder="Enter your email"
+        [ngModelOptions]="{ standalone: true }"
+        class="mb-05 p-fluid"
+      />
+
+      <label for="password">Password</label>
+      <p-password
+        [(ngModel)]="password"
+        [ngModelOptions]="{ standalone: true }"
+        [toggleMask]="true"
+        placeholder="Enter your password"
+        class="p-fluid"
+        [feedback]="false"
+      />
+
+      <p-button
+        label="Create Account"
+        severity="contrast"
+        class="p-fluid"
+        (onClick)="register()"
+      />
+    </form>
+
+    <p>Already have an account ? <a routerLink="/auth/login">Log in</a></p>
+  </div>
+</div>
