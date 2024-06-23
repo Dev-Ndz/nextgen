@@ -22,14 +22,16 @@ export class HomeComponent {
   };
 
   getEmail = () => {
-    this.http.get("http://localhost:5000/email").subscribe({
-      next: (data: any) => {
-        this.email = data.email;
-      },
-      error: (err) => {
-        console.log(err);
-      },
-    });
+    this.http
+      .get("https://next-gen-f6acfadecd9e.herokuapp.com/email")
+      .subscribe({
+        next: (data: any) => {
+          this.email = data.email;
+        },
+        error: (err) => {
+          console.log(err);
+        },
+      });
   };
 
   ngOnInit() {
