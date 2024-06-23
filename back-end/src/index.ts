@@ -27,7 +27,6 @@ app.get("/test", (req: Request, res: Response) => {
   return res.send("test ok");
 });
 
-app.post("/", authorizeUrl);
 app.post("/auth/register", register);
 app.post("/auth/login", login);
 
