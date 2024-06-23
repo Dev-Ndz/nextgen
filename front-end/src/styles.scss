@@ -52,9 +52,6 @@ h3.bold {
   display: flex;
   flex-direction: column;
 }
-.wrap-reverse {
-  flex-wrap: wrap-reverse;
-}
 
 .grow {
   flex-grow: 1;
@@ -143,4 +140,27 @@ h3.bold {
   padding: 0px;
   justify-content: start;
   margin-top: 10px;
+}
+
+@media (max-width: 1040px) {
+  // h1 {
+  //   font-size: 3rem;
+  // }
+  // .pad-5 {
+  //   padding: 2rem;
+  // }
+  .wrap-reverse {
+    flex-direction: column-reverse;
+  }
+  .w50 {
+    width: 100%;
+  }
+}
+@media (max-width: 725px) {
+  h1 {
+    font-size: 3rem;
+  }
+  .pad-5 {
+    padding: 2rem;
+  }
 }
