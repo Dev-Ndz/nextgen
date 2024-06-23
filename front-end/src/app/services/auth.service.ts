@@ -10,7 +10,7 @@ export class AuthService {
 
   register(email: string, password: string) {
     return this.http
-      .post("http://localhost:5000/auth/register", {
+      .post("https://next-gen-f6acfadecd9e.herokuapp.com/auth/register", {
         email,
         password,
       })
@@ -23,7 +23,7 @@ export class AuthService {
 
   login(email: string, password: string) {
     return this.http
-      .post("http://localhost:5000/auth/login", {
+      .post("https://next-gen-f6acfadecd9e.herokuapp.com/auth/login", {
         email,
         password,
       })
