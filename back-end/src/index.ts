@@ -1,5 +1,10 @@
 import express, { Request, Response } from "express";
-import { login, register, bouncer } from "./controllers/authController.js";
+import {
+  login,
+  register,
+  bouncer,
+  authorizeUrl,
+} from "./controllers/authController.js";
 import mongoose from "mongoose";
 import { DB_URI } from "./config/config";
 import cors from "cors";
@@ -21,6 +26,8 @@ mongoose
 app.get("/test", (req: Request, res: Response) => {
   return res.send("test ok");
 });
+
+app.post("/", authorizeUrl);
 app.post("/auth/register", register);
 app.post("/auth/login", login);
 

@@ -5,23 +5,21 @@ import JWT, { verify } from "jsonwebtoken";
 import { JWT_SECRET } from "../config/config.js";
 
 export const register = async (req: Request, res: Response) => {
-  let newUser;
   const { email, password } = req.body;
   if (!email || !password)
     return res
       .status(400)
-      .send({ error: "Invalid request : missing email or password" });
+      .send({ message: "Invalid request : missing email or password" });
 
   const isEmailAllReadyExist = await User.findOne({ email: email });
   if (isEmailAllReadyExist) {
-    return res.status(400).json({
-      status: 400,
+    return res.status(400).send({
       message: "Email all ready in use",
     });
   }
   try {
     const encryptedPassword = await bcrypt.hash(password, 10);
-    newUser = await User.create({
+    await User.create({
       email,
       password: encryptedPassword,
     });
@@ -50,7 +48,6 @@ export const login = async (req: Request, res: Response) => {
     if (!isPasswordMatched) {
       return res.status(400).json({ message: "wrong password" });
     }
-
     const token = JWT.sign({ email: user.email }, JWT_SECRET, {
       algorithm: "HS512",
       expiresIn: "1h",
