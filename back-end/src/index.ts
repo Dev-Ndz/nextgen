@@ -1,10 +1,5 @@
 import express, { Request, Response } from "express";
-import {
-  login,
-  register,
-  bouncer,
-  authorizeUrl,
-} from "./controllers/authController.js";
+import { login, register, bouncer } from "./controllers/authController.js";
 import mongoose from "mongoose";
 import { DB_URI } from "./config/config";
 import cors from "cors";
